@@ -30,9 +30,15 @@
             background-attachment: fixed;
             min-height: 100vh;
         }
-		 /* 强制整个头部区域渐变背景 */
-  		.header, .header *, .header .container, .header .container * {
-      		background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%) !important;
+		  /* 强制覆盖所有头部相关元素的背景 */
+  		.header,
+  		body>header.header,
+	    .header .container,
+	    .header .container *,
+	    .header .navbar-header,
+	    .header .collapse {
+      			background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%) !important;
+      			background-color: transparent !important;
   		}
 
   		/* 确保logo区域透明 */
