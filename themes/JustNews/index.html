@@ -30,12 +30,15 @@
             background-attachment: fixed;
             min-height: 100vh;
         }
-		/* 头像区域青色渐变 */
- 	    .logo {
-      		background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%) !important;
-      		padding: 10px;
-      		border-radius: 10px;
-      		margin: 10px 0;
+		 /* 整个头部区域渐变背景 */
+  		.header {
+      		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+      		padding: 10px 0;
+  		}
+
+  		/* 确保logo区域透明 */
+  		.logo {
+      		background: transparent !important;
   		}
         </style>		
 		{{ &OPT.codeBeforHead }}
