@@ -30,10 +30,9 @@
             background-attachment: fixed;
             min-height: 100vh;
         }
-		 /* 整个头部区域渐变背景 */
-  		.header {
+		 /* 强制整个头部区域渐变背景 */
+  		.header, .header *, .header .container, .header .container * {
       		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-      		padding: 10px 0;
   		}
 
   		/* 确保logo区域透明 */
