@@ -342,20 +342,15 @@
 					}
 				});
 			})(jQuery);</script>
-		 <!-- Live2D看板娘配置 -->
-          <script>
-    		window.L2Dwidget = {
+		 <!-- Live2D看板娘 -->
+  		 <script>
+    			// 在加载前配置
+    		window.live2dWidgetConfig = {
       		  mobile: {
         		show: true,
-        		scale: 0.8,
-        		motion: true    // 启用动作
-      		 },
-      		 display: {
-        	   position: "right",
-        	   width: 150,     // 调整宽度
-               height: 300     // 调整高度
-             }
-    	   };
+        		scale: 0.5
+      		}
+    	  };
   		</script>
 		<!-- 在这里添加 -->
   		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.css">
