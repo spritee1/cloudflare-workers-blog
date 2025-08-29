@@ -38,7 +38,7 @@
 				margin: 0;
 			}
 			
-			/* 移动端导航菜单调整 */
+			/* 移动端导航菜单调整 - 默认隐藏 */
 			.navbar-collapse {
 				position: fixed;
 				top: 0;
@@ -47,7 +47,7 @@
 				height: 100%;
 				background: rgba(0, 0, 0, 0.95);
 				z-index: 9999;
-				display: none;
+				display: none !important;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
@@ -56,7 +56,7 @@
 			
 			/* 当菜单展开时显示 */
 			.navbar-collapse.in {
-				display: flex;
+				display: flex !important;
 			}
 			
 			/* 移动端导航菜单项调整 */
