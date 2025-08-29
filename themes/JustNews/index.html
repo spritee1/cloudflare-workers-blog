@@ -25,13 +25,13 @@
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/wpcom-cn/assets/fonts/icons-2.6.4.js?ver=6.1.2' id='wpcom-icons-js'></script>
  		<!-- 添加背景样式 -->
         <style>
-			
         body {
             background: #f5f5dc !important; /* 米白色（经典米白） */
     		background-attachment: fixed;
     		min-height: 100vh;
         }
-		 /* 精确针对您的header结构 */
+		
+		/* 精确针对您的header结构 */
   		header.header {
       			background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
   		}
@@ -50,6 +50,7 @@
   		.navbar-collapse {
       		background: transparent !important;
   		}
+		
 		/* 文章列表项背景颜色 */
   		.post-loop-default .item {
 	      background: #f8f9fa !important; /* 柔和的浅灰色 */
@@ -64,88 +65,96 @@
 	      background: #e9ecef !important; /* 更深一点的浅灰色 */
 	      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	  	}
-			 /* 主题切换器样式 */
-  .theme-switcher {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-  }
+		
+		/* 主题1样式 */
+		.theme1-body {
+			background: #f5f5dc !important; /* 米白色 */
+		}
 
-  .theme-logo {
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
-  }
+		.theme1-header {
+			background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
+		}
 
-  .theme-logo:hover {
-      transform: scale(1.1);
-      border-color: #fff;
-  }
+		/* 主题2样式 */
+		.theme2-body {
+			background: #e3f2fd !important; /* 浅蓝色 */
+		}
 
-  .theme-logo.active {
-      border-color: #fff;
-      box-shadow: 0 0 5px rgba(255,255,255,0.5);
-  }
+		.theme2-header {
+			background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%) !important;
+		}
+		
+		/* Logo容器，用于并排显示 */
+		.logo-container {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+			margin-right: 20px; /* 与菜单的间距 */
+		}
 
-  /* 主题1样式 */
-  .theme1-body {
-      background: #f5f5dc !important; /* 米白色 */
-  }
+		/* 原始logo样式 */
+		.logo-container .main-logo {
+			flex-shrink: 0;
+		}
 
-  .theme1-header {
-      background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
-  }
+		/* 主题切换器样式 */
+		.logo-container .theme-switcher {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+		}
 
-  /* 主题2样式 */
-  .theme2-body {
-      background: #e3f2fd !important; /* 浅蓝色 */
-  }
+		.theme-logo {
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+			border-radius: 50%;
+			border: 2px solid transparent;
+			transition: all 0.3s ease;
+		}
 
-  .theme2-header {
-      background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%) !important;
-  }
+		.theme-logo:hover {
+			transform: scale(1.1);
+			border-color: #fff;
+		}
 
-  /* 可以添加更多主题样式 */
-			/* Logo容器，用于并排显示 */
-  .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-  }
-
-  /* 原始logo样式 */
-  .logo-container .main-logo {
-      flex-shrink: 0;
-  }
-
-  /* 主题切换器样式 */
-  .logo-container .theme-switcher {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-  }
-
-  .theme-logo {
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
-  }
-
-  .theme-logo:hover {
-      transform: scale(1.1);
-      border-color: #fff;
-  }
-
-  .theme-logo.active {
-      border-color: #fff;
-      box-shadow: 0 0 5px rgba(255,255,255,0.5);
-  }
+		.theme-logo.active {
+			border-color: #fff;
+			box-shadow: 0 0 5px rgba(255,255,255,0.5);
+		}
+		
+		/* 导航栏对齐样式 */
+		.navbar-header {
+			display: flex;
+			align-items: center;
+			min-height: 80px; /* 根据需要调整 */
+		}
+		
+		/* 调整导航栏菜单的对齐 */
+		.navbar-collapse {
+			display: flex;
+			align-items: center;
+		}
+		
+		.navbar-left {
+			margin: 0;
+		}
+		
+		.navbar-nav {
+			display: flex;
+			align-items: center;
+			margin: 0;
+		}
+		
+		.navbar-nav > li {
+			display: flex;
+			align-items: center;
+		}
+		
+		.navbar-nav > li > a {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
         </style>		
 		{{ &OPT.codeBeforHead }}
 	</head>
