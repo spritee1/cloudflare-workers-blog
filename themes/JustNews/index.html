@@ -91,6 +91,61 @@
 			gap: 15px;
 			margin-right: 20px; /* 与菜单的间距 */
 		}
+		
+		/* 移动端适配 */
+		@media screen and (max-width: 768px) {
+			.logo-container {
+				margin-right: 10px;
+			}
+			
+			/* 确保汉堡菜单按钮正确显示 */
+			.navbar-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				min-height: 50px;
+			}
+			
+			.navbar-toggle {
+				margin-right: 0;
+				z-index: 1000;
+			}
+			
+			/* 移动端菜单项样式 */
+			.navbar-nav > li {
+				display: block;
+				text-align: center;
+				padding: 10px 0;
+			}
+			
+			.navbar-nav > li > a {
+				padding: 10px 15px;
+				display: block;
+				color: #000000 !important;
+				text-shadow: none !important;
+			}
+			
+			.navbar-nav > li > a:hover {
+				color: #333333 !important;
+				background-color: rgba(0,0,0,0.05);
+			}
+			
+			/* 移动端展开菜单样式 */
+			.navbar-collapse {
+				background: white;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+				margin-top: 5px;
+			}
+			
+			/* 移动端logo大小调整 */
+			.main-logo img,
+			.theme-logo {
+				width: 25px;
+				height: 25px;
+			}
+		}
 
 		/* 原始logo样式 */
 		.logo-container .main-logo {
