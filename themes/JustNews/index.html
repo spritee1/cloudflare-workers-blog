@@ -111,6 +111,8 @@
 			border-radius: 50%;
 			border: 2px solid transparent;
 			transition: all 0.3s ease;
+			object-fit: cover; /* 确保图片填充整个容器 */
+			object-position: center; /* 图片居中显示 */
 		}
 
 		.theme-logo:hover {
@@ -182,11 +184,11 @@
 						<!-- 主题切换logo -->
       					<div class="theme-switcher">
           					<img
-  	src="https://img.qselery.icu/img/20250829072012486.jpg" alt="主题1"
-   class="theme-logo" data-theme="theme1">
+  	src="https://img.qselery.icu/img/20250828164053183.jpg" alt="主题1"
+   class="theme-logo" data-theme="theme1" style="object-fit: cover;">
           <img
   src="https://img.qselery.icu/img/20250829072941641.jpg"
-  alt="主题2" class="theme-logo" data-theme="theme2">
+  alt="主题2" class="theme-logo" data-theme="theme2" style="object-fit: cover;">
           <!-- 可以添加更多主题logo -->
 					</div>
 				</div>
