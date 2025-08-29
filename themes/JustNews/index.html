@@ -30,8 +30,7 @@
     		background-attachment: fixed;
     		min-height: 100vh;
         }
-		
-		/* 精确针对您的header结构 */
+		 /* 精确针对您的header结构 */
   		header.header {
       			background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
   		}
@@ -50,220 +49,6 @@
   		.navbar-collapse {
       		background: transparent !important;
   		}
-		
-		/* 文章列表项背景颜色 */
-  		.post-loop-default .item {
-	      background: #f8f9fa !important; /* 柔和的浅灰色 */
-	      border-radius: 8px;
-	      margin-bottom: 15px;
-	      padding: 15px;
-	      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  		}
-
-  		/* 鼠标悬停效果 */
-  		.post-loop-default .item:hover {
-	      background: #e9ecef !important; /* 更深一点的浅灰色 */
-	      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-	  	}
-		
-		/* 主题1样式 */
-		.theme1-body {
-			background: #f5f5dc !important; /* 米白色 */
-		}
-
-		.theme1-header {
-			background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
-		}
-
-		/* 主题2样式 */
-		.theme2-body {
-			background: #e3f2fd !important; /* 浅蓝色 */
-		}
-
-		.theme2-header {
-			background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%) !important;
-		}
-		
-		/* Logo容器，用于并排显示 */
-		.logo-container {
-			display: flex;
-			align-items: center;
-			gap: 15px;
-			margin-right: 20px; /* 与菜单的间距 */
-		}
-		
-		/* 移动端适配 */
-		@media screen and (max-width: 768px) {
-			/* 移动端logo大小调整 */
-			.main-logo img,
-			.theme-logo {
-				width: 25px;
-				height: 25px;
-			}
-			
-			/* 确保移动端汉堡菜单正确显示 */
-			.navbar-toggle {
-				position: absolute;
-				right: 15px;
-				top: 50%;
-				transform: translateY(-50%);
-				z-index: 10000;
-				margin: 0;
-			}
-			
-			/* 移动端导航菜单调整 - 默认隐藏 */
-			.navbar-collapse {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: rgba(0, 0, 0, 0.95);
-				z-index: 9999;
-				display: none !important;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				overflow-y: auto;
-			}
-			
-			/* 当菜单展开时显示 */
-			.navbar-collapse.in {
-				display: flex !important;
-			}
-			
-			/* 移动端导航菜单项调整 */
-			.navbar-nav {
-				flex-direction: column;
-				align-items: center;
-				gap: 25px;
-				padding: 20px;
-				width: 100%;
-				max-width: 300px;
-			}
-			
-			.navbar-nav > li {
-				margin: 10px 0;
-				width: 100%;
-				text-align: center;
-			}
-			
-			/* 移动端导航链接文字颜色 */
-			.navbar-nav > li > a {
-				color: #ffffff !important;
-				font-size: 20px;
-				font-weight: 500;
-				padding: 15px 20px;
-				display: block;
-				text-decoration: none;
-				border-radius: 5px;
-				transition: background-color 0.3s ease;
-			}
-			
-			.navbar-nav > li > a:hover {
-				background-color: rgba(255, 255, 255, 0.1);
-				color: #ffffff !important;
-			}
-			
-			/* 登录链接在移动端的样式 */
-			.navbar-action .login {
-				color: #ffffff !important;
-				font-size: 18px;
-				margin-top: 20px;
-				padding: 10px 20px;
-				border: 1px solid #ffffff;
-				border-radius: 5px;
-				text-decoration: none;
-				transition: background-color 0.3s ease;
-			}
-			
-			.navbar-action .login:hover {
-				background-color: rgba(255, 255, 255, 0.1);
-			}
-		}
-
-		/* 原始logo样式 */
-		.logo-container .main-logo {
-			flex-shrink: 0;
-		}
-
-		/* 主题切换器样式 */
-		.logo-container .theme-switcher {
-			display: flex;
-			gap: 10px;
-			align-items: center;
-		}
-
-		.theme-logo {
-			width: 30px;
-			height: 30px;
-			cursor: pointer;
-			border-radius: 50%;
-			border: 2px solid transparent;
-			transition: all 0.3s ease;
-			object-fit: cover; /* 确保图片填充整个容器 */
-			object-position: center; /* 图片居中显示 */
-		}
-
-		.theme-logo:hover {
-			transform: scale(1.1);
-			border-color: #fff;
-		}
-
-		.theme-logo.active {
-			border-color: #fff;
-			box-shadow: 0 0 5px rgba(255,255,255,0.5);
-		}
-		
-		/* 导航栏对齐样式 */
-		.navbar-header {
-			display: flex;
-			align-items: center;
-			min-height: 80px; /* 根据需要调整 */
-			position: relative;
-		}
-		
-		/* 汉堡菜单按钮固定在右上角 */
-		.navbar-toggle {
-			position: absolute;
-			right: 15px;
-			top: 50%;
-			transform: translateY(-50%);
-			z-index: 10000; /* 确保在最上层 */
-			margin: 0;
-		}
-		
-		/* 确保logo容器不会影响按钮位置 */
-		.logo-container {
-			flex: 1;
-			margin-right: 50px; /* 为汉堡菜单留出空间 */
-		}
-		
-		/* 调整导航栏菜单的对齐 - 桌面端 */
-		.navbar-collapse {
-			display: flex;
-			align-items: center;
-		}
-		
-		.navbar-left {
-			margin: 0;
-		}
-		
-		.navbar-nav {
-			display: flex;
-			align-items: center;
-			margin: 0;
-		}
-		
-		.navbar-nav > li {
-			display: flex;
-			align-items: center;
-		}
-		
-		.navbar-nav > li > a {
-			padding-top: 15px;
-			padding-bottom: 15px;
-		}
         </style>		
 		{{ &OPT.codeBeforHead }}
 	</head>
@@ -276,30 +61,17 @@
 						<span class="icon-bar icon-bar-2"></span>
 						<span class="icon-bar icon-bar-3"></span>
 					</button>
-					<div class="logo-container">
-						<!-- 原始logo -->
-						<div class="main-logo">
-							{{ #OPT.logo }}
-							<a href="/" rel="home"><img src="{{ &OPT.logo }}" alt="{{ &OPT.siteName }}" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;"></a>
-							{{ /OPT.logo }}
-							
-							{{ ^OPT.logo }}
-							<a href="/" rel="home"><img src="https://github.com/spritee1/my-images/blob/main/Cache_-4425da076a6845d4.jpg?raw=true" alt="请自定义OPT.logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;"></a>
-							{{ /OPT.logo }}
-						</div>
-
-						<!-- 主题切换logo -->
-      					<div class="theme-switcher">
-          					<img
-  	src="https://img.qselery.icu/img/20250829072012486.jpg" alt="主题1"
-   class="theme-logo" data-theme="theme1" style="object-fit: cover;">
-          <img
-  src="https://img.qselery.icu/img/20250829072941641.jpg"
-  alt="主题2" class="theme-logo" data-theme="theme2" style="object-fit: cover;">
-          <!-- 可以添加更多主题logo -->
+					<div class="logo">
+						{{ #OPT.logo }}
+						<a href="/" rel="home"><img src="{{ &OPT.logo }}" alt="{{ &OPT.siteName }}"></a>
+						{{ /OPT.logo }}
+						
+						{{ ^OPT.logo }}
+						<a href="/" rel="home"><img src="https://github.com/spritee1/my-images/blob/main/Cache_-4425da076a6845d4.jpg?raw=true" alt="请自定义OPT.logo"></a>
+						{{ /OPT.logo }}
 					</div>
 				</div>
-				<div class="navbar-collapse">
+				<div class="collapse navbar-collapse">
 					<nav class="navbar-left primary-menu">
 						<ul id="menu-%e5%af%bc%e8%88%aa" class="nav navbar-nav wpcom-adv-menu">
 							{{ #widgetMenuList }}
@@ -570,6 +342,19 @@
 					}
 				});
 			})(jQuery);</script>
+		 <!-- Live2D看板娘 -->
+  		 <script>
+    			// 在加载前配置
+    		window.live2dWidgetConfig = {
+      		  mobile: {
+        		show: true,
+        		scale: 0.5
+      		}
+    	  };
+  		</script>
+		<!-- 在这里添加 -->
+  		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.css">
+  		<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 		{{ &OPT.codeBeforBody }}
 		<!-- 添加博客运行时间显示 -->
         <script>
@@ -593,96 +378,7 @@
             // 每分钟更新一次运行时间
             setInterval(calculateBlogRuntime, 60000);
         });
-        
-        // 移动端导航菜单切换功能
-        document.addEventListener('DOMContentLoaded', function() {
-            var navbarToggle = document.querySelector('.navbar-toggle');
-            var navbarCollapse = document.querySelector('.navbar-collapse');
-            var navbarNav = document.querySelector('.navbar-nav');
-            var navbarAction = document.querySelector('.navbar-action');
-            
-            if (navbarToggle && navbarCollapse) {
-                navbarToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navbarCollapse.classList.toggle('in');
-                    
-                    // 防止背景滚动
-                    if (navbarCollapse.classList.contains('in')) {
-                        document.body.style.overflow = 'hidden';
-                    } else {
-                        document.body.style.overflow = '';
-                    }
-                });
-                
-                // 点击菜单项后关闭菜单
-                var navLinks = navbarCollapse.querySelectorAll('a');
-                navLinks.forEach(function(link) {
-                    link.addEventListener('click', function() {
-                        navbarCollapse.classList.remove('in');
-                        document.body.style.overflow = '';
-                    });
-                });
-                
-                // 点击菜单外部关闭菜单
-                navbarCollapse.addEventListener('click', function(e) {
-                    if (e.target === navbarCollapse) {
-                        navbarCollapse.classList.remove('in');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-        });
     </script>
-		 <script>
-  // 主题切换功能
-  document.addEventListener('DOMContentLoaded', function() {
-      const themeLogos = document.querySelectorAll('.theme-logo');
-      const body = document.body;
-      const header = document.querySelector('header.header');
-
-      // 从localStorage获取保存的主题
-      const savedTheme = localStorage.getItem('selectedTheme') || 'theme1';
-      applyTheme(savedTheme);
-      setActiveLogo(savedTheme);
-
-      // 为每个主题logo添加点击事件
-      themeLogos.forEach(logo => {
-          logo.addEventListener('click', function() {
-              const theme = this.getAttribute('data-theme');
-              applyTheme(theme);
-              setActiveLogo(theme);
-              // 保存选择的主题到localStorage
-              localStorage.setItem('selectedTheme', theme);
-          });
-      });
-
-      // 应用主题
-      function applyTheme(theme) {
-          // 移除所有主题类
-          body.classList.remove('theme1-body', 'theme2-body');
-          header.classList.remove('theme1-header', 'theme2-header');
-
-          // 添加选中的主题类
-          if (theme === 'theme1') {
-              body.classList.add('theme1-body');
-              header.classList.add('theme1-header');
-          } else if (theme === 'theme2') {
-              body.classList.add('theme2-body');
-              header.classList.add('theme2-header');
-          }
-      }
-
-      // 设置激活的logo
-      function setActiveLogo(theme) {
-          themeLogos.forEach(logo => {
-              logo.classList.remove('active');
-              if (logo.getAttribute('data-theme') === theme) {
-                  logo.classList.add('active');
-              }
-          });
-      }
-  });
-  </script>
 	</body>
 
 </html>
