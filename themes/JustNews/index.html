@@ -109,6 +109,43 @@
   }
 
   /* 可以添加更多主题样式 */
+			/* Logo容器，用于并排显示 */
+  .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  }
+
+  /* 原始logo样式 */
+  .logo-container .main-logo {
+      flex-shrink: 0;
+  }
+
+  /* 主题切换器样式 */
+  .logo-container .theme-switcher {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+  }
+
+  .theme-logo {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+  }
+
+  .theme-logo:hover {
+      transform: scale(1.1);
+      border-color: #fff;
+  }
+
+  .theme-logo.active {
+      border-color: #fff;
+      box-shadow: 0 0 5px rgba(255,255,255,0.5);
+  }
         </style>		
 		{{ &OPT.codeBeforHead }}
 	</head>
