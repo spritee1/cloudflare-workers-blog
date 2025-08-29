@@ -25,6 +25,7 @@
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/wpcom-cn/assets/fonts/icons-2.6.4.js?ver=6.1.2' id='wpcom-icons-js'></script>
  		<!-- 添加背景样式 -->
         <style>
+			
         body {
             background: #f5f5dc !important; /* 米白色（经典米白） */
     		background-attachment: fixed;
@@ -63,6 +64,51 @@
 	      background: #e9ecef !important; /* 更深一点的浅灰色 */
 	      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	  	}
+			 /* 主题切换器样式 */
+  .theme-switcher {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .theme-logo {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+  }
+
+  .theme-logo:hover {
+      transform: scale(1.1);
+      border-color: #fff;
+  }
+
+  .theme-logo.active {
+      border-color: #fff;
+      box-shadow: 0 0 5px rgba(255,255,255,0.5);
+  }
+
+  /* 主题1样式 */
+  .theme1-body {
+      background: #f5f5dc !important; /* 米白色 */
+  }
+
+  .theme1-header {
+      background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
+  }
+
+  /* 主题2样式 */
+  .theme2-body {
+      background: #e3f2fd !important; /* 浅蓝色 */
+  }
+
+  .theme2-header {
+      background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%) !important;
+  }
+
+  /* 可以添加更多主题样式 */
         </style>		
 		{{ &OPT.codeBeforHead }}
 	</head>
@@ -83,6 +129,16 @@
 						{{ ^OPT.logo }}
 						<a href="/" rel="home"><img src="https://github.com/spritee1/my-images/blob/main/Cache_-4425da076a6845d4.jpg?raw=true" alt="请自定义OPT.logo"></a>
 						{{ /OPT.logo }}
+
+						<!-- 主题切换logo -->
+      					<div class="theme-switcher">
+          					<img
+  	src="https://img.qselery.icu/img/20250828164053183.jpg" alt="主题1"
+   class="theme-logo" data-theme="theme1">
+          <img
+  src="https://img.qselery.icu/img/20250829072941641.jpg"
+  alt="主题2" class="theme-logo" data-theme="theme2">
+          <!-- 可以添加更多主题logo -->
 					</div>
 				</div>
 				<div class="collapse navbar-collapse">
@@ -380,6 +436,56 @@
             setInterval(calculateBlogRuntime, 60000);
         });
     </script>
+		 <script>
+  // 主题切换功能
+  document.addEventListener('DOMContentLoaded', function() {
+      const themeLogos = document.querySelectorAll('.theme-logo');
+      const body = document.body;
+      const header = document.querySelector('header.header');
+
+      // 从localStorage获取保存的主题
+      const savedTheme = localStorage.getItem('selectedTheme') || 'theme1';
+      applyTheme(savedTheme);
+      setActiveLogo(savedTheme);
+
+      // 为每个主题logo添加点击事件
+      themeLogos.forEach(logo => {
+          logo.addEventListener('click', function() {
+              const theme = this.getAttribute('data-theme');
+              applyTheme(theme);
+              setActiveLogo(theme);
+              // 保存选择的主题到localStorage
+              localStorage.setItem('selectedTheme', theme);
+          });
+      });
+
+      // 应用主题
+      function applyTheme(theme) {
+          // 移除所有主题类
+          body.classList.remove('theme1-body', 'theme2-body');
+          header.classList.remove('theme1-header', 'theme2-header');
+
+          // 添加选中的主题类
+          if (theme === 'theme1') {
+              body.classList.add('theme1-body');
+              header.classList.add('theme1-header');
+          } else if (theme === 'theme2') {
+              body.classList.add('theme2-body');
+              header.classList.add('theme2-header');
+          }
+      }
+
+      // 设置激活的logo
+      function setActiveLogo(theme) {
+          themeLogos.forEach(logo => {
+              logo.classList.remove('active');
+              if (logo.getAttribute('data-theme') === theme) {
+                  logo.classList.add('active');
+              }
+          });
+      }
+  });
+  </script>
 	</body>
 
 </html>
