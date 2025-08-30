@@ -93,6 +93,22 @@
 							{{ /widgetMenuList }}
 						</ul>
 					</nav>
+					<div class="navbar-form navbar-left hidden-xs" role="search">
+						<form action="/search" method="GET" class="form-inline">
+							<div class="input-group">
+								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: 150px;">
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-default">
+										<i class="wpcom-icon wi">
+											<svg aria-hidden="true">
+												<use xlink:href="#wi-search"></use>
+											</svg>
+										</i>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
 					<div class="navbar-action pull-right">
 						<div id="j-user-wrap">
 							<a class="login cur" href="/admin">登录</a>
