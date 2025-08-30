@@ -90,7 +90,7 @@
 						<span class="icon-bar icon-bar-2"></span>
 						<span class="icon-bar icon-bar-3"></span>
 					</button>
-					<div class="logo">
+					<div class="logo" style="display: inline-block;">
 						{{ #OPT.logo }}
 						<a href="/" rel="home"><img src="{{ &OPT.logo }}" alt="{{ &OPT.siteName }}"></a>
 						{{ /OPT.logo }}
@@ -100,7 +100,7 @@
 						{{ /OPT.logo }}
 					</div>
 					<!-- 移动端搜索框 -->
-					<div class="navbar-form navbar-left visible-xs" role="search" style="margin: 10px 15px; display: inline-block; width: auto; float: right;">
+					<div class="navbar-form navbar-left visible-xs" role="search" style="display: inline-block; width: auto; float: right; margin: 10px 0; position: relative;">
 						<form action="/search" method="GET" class="form-inline">
 							<div class="input-group" style="width: 150px;">
 								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: 110px; height: 30px; padding: 5px 10px;">
