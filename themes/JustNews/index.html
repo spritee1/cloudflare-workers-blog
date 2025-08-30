@@ -99,6 +99,23 @@
 						<a href="/" rel="home"><img src="https://github.com/spritee1/my-images/blob/main/Cache_-4425da076a6845d4.jpg?raw=true" alt="请自定义OPT.logo"></a>
 						{{ /OPT.logo }}
 					</div>
+					<!-- 移动端搜索框 -->
+					<div class="navbar-form navbar-left visible-xs" role="search" style="margin: 10px 15px;">
+						<form action="/search" method="GET" class="form-inline">
+							<div class="input-group" style="width: 100%;">
+								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: calc(100% - 40px);">
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-default">
+										<i class="wpcom-icon wi">
+											<svg aria-hidden="true">
+												<use xlink:href="#wi-search"></use>
+											</svg>
+										</i>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
 				</div>
 				<div class="collapse navbar-collapse">
 					<nav class="navbar-left primary-menu">
@@ -128,23 +145,6 @@
 						<div id="j-user-wrap">
 							<a class="login cur" href="/admin">登录</a>
 						</div>
-					</div>
-					<!-- 移动端搜索框 -->
-					<div class="navbar-form navbar-left visible-xs" role="search" style="margin: 10px 15px;">
-						<form action="/search" method="GET" class="form-inline">
-							<div class="input-group" style="width: 100%;">
-								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: calc(100% - 40px);">
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default">
-										<i class="wpcom-icon wi">
-											<svg aria-hidden="true">
-												<use xlink:href="#wi-search"></use>
-											</svg>
-										</i>
-									</button>
-								</span>
-							</div>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -427,6 +427,7 @@
             // 每分钟更新一次运行时间
             setInterval(calculateBlogRuntime, 60000);
         });
+        
     </script>
 	</body>
 
