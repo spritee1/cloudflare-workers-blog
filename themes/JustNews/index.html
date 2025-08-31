@@ -148,7 +148,8 @@
 			
 			/* 修复汉堡菜单展开后元素显示问题 */
 			.navbar-collapse {
-				background: rgba(0, 0, 0, 0.9) !important; /* 半透明黑色背景 */
+				max-height: 100vh !important;
+				overflow-y: auto !important;
 			}
 			
 			.navbar-action {
