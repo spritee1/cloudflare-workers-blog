@@ -49,9 +49,57 @@
   		.navbar-collapse {
       		background: transparent !important;
   		}
+		
+		/* 添加半透明背景图片 */
+		body {
+			background-image: url('https://img.qselery.icu/img/20250829072941641.jpg') !important;
+			background-size: cover !important;
+			background-position: center center !important;
+			background-repeat: no-repeat !important;
+			background-attachment: fixed !important;
+			background-color: rgba(245, 245, 245, 0.9) !important;
+		}
+		
+		/* 为主要内容区域添加半透明背景 */
+		.main, .sidebar, .footer {
+			background-color: rgba(255, 255, 255, 0.85) !important;
+			backdrop-filter: blur(3px) !important;
+			border-radius: 10px !important;
+		}
+		
+		/* 为容器添加一些内边距和阴影效果 */
+		.container.wrap {
+			padding: 20px !important;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+			border-radius: 10px !important;
+		}
+		
+		/* 确保在小屏幕上也有良好的显示效果 */
+		@media (max-width: 768px) {
+			body {
+				background-size: cover !important;
+			}
+			
+			.main, .sidebar, .footer {
+				background-color: rgba(255, 255, 255, 0.9) !important;
+				backdrop-filter: blur(2px) !important;
+			}
+			
+			.container.wrap {
+				padding: 10px !important;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+			}
+		}
+		
+		/* 为header添加半透明效果 */
+		header.header {
+			background-color: rgba(255, 255, 255, 0.85) !important;
+			backdrop-filter: blur(5px) !important;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+		}
 		/* 文章列表项背景颜色 */
   		.post-loop-default .item {
-	      background: #f8f9fa !important; /* 柔和的浅灰色 */
+	      background: rgba(248, 249, 250, 0.8) !important; /* 柔和的浅灰色半透明 */
 	      border-radius: 8px;
 	      margin-bottom: 15px;
 	      padding: 15px;
