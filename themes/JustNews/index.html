@@ -66,16 +66,33 @@
 		
 		/* 移动端搜索框样式 */
 		@media (max-width: 767px) {
-			.navbar-form.visible-xs {
-				margin: 10px 15px !important;
-			}
-			
-			.navbar-form.visible-xs .input-group {
+			.navbar-header {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: space-between !important;
 				width: 100% !important;
 			}
 			
+			.logo {
+				flex-shrink: 0 !important;
+			}
+			
+			.navbar-form.visible-xs {
+				margin: 0 !important;
+				position: static !important;
+				float: none !important;
+				display: flex !important;
+				align-items: center !important;
+			}
+			
+			.navbar-form.visible-xs .input-group {
+				width: 150px !important;
+				display: flex !important;
+			}
+			
 			.navbar-form.visible-xs .form-control {
-				width: calc(100% - 40px) !important;
+				width: 110px !important;
+				flex-grow: 1 !important;
 			}
 		}
         </style>		
