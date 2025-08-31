@@ -135,6 +135,7 @@
 			
 			.navbar-nav > li {
 				display: block !important;
+				float: none !important;
 			}
 			
 			/* 确保折叠的导航栏在移动端正确显示 */
@@ -150,30 +151,36 @@
 			.navbar-collapse {
 				max-height: 100vh !important;
 				overflow-y: auto !important;
+				width: 100% !important;
 			}
 			
 			.navbar-action {
 				display: block !important;
 				overflow: visible !important;
+				float: none !important;
+				margin: 10px 0 !important;
 			}
 			
 			/* 确保搜索框和登录按钮在移动端汉堡菜单中可见 */
 			.navbar-form.navbar-left {
 				display: block !important;
 				margin: 10px 20px !important;
+				float: none !important;
+				width: auto !important;
 			}
 			
 			#j-user-wrap {
 				display: block !important;
 				margin: 10px 20px !important;
+				float: none !important;
 			}
 			
 			.login.cur {
 				display: block !important;
-				color: #fff !important;
+				color: #333 !important;
 				text-align: center !important;
 				padding: 8px 0 !important;
-				border: 1px solid rgba(255, 255, 255, 0.2) !important;
+				border: 1px solid #ddd !important;
 				border-radius: 4px !important;
 			}
 		}
@@ -251,6 +258,10 @@
 							{{ #widgetMenuList }}
 								<li class="menu-item"><a href="{{ &url }}">{{ &title }}</a></li>
 							{{ /widgetMenuList }}
+							
+							{{ #categoryList }}
+								<li class="menu-item"><a href="/category/{{&name}}" >{{&name}}</a></li>
+							{{ /categoryList }}
 						</ul>
 					</nav>
 					<div class="navbar-action pull-right">
