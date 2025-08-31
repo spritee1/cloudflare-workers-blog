@@ -26,65 +26,21 @@
 		<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.3.2/styles/tomorrow-night-bright.min.css">
 		<script src='https://cdn.staticfile.org/highlight.js/10.3.2/highlight.min.js'></script>
 		<style>
-		/* 搜索框垂直居中 - 最终方案 */
+		/* 搜索框垂直居中 */
 		.navbar-form {
-			margin-top: 10px !important;
-			margin-bottom: 10px !important;
-			display: inline-flex !important;
-			align-items: center !important;
-			vertical-align: middle !important;
+			display: flex;
+			align-items: center;
+			height: 50px;
+			margin-top: 0;
+			margin-bottom: 0;
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 		
 		.navbar-form .form-group {
-			display: inline-flex !important;
-			align-items: center !important;
-			margin-bottom: 0 !important;
-		}
-		
-		.navbar-form .form-control {
-			height: 30px !important;
-			line-height: 30px !important;
-		}
-		
-		.navbar-form .btn {
-			height: 30px !important;
-			line-height: 30px !important;
-			display: flex !important;
-			align-items: center !important;
-			justify-content: center !important;
-			padding: 0 10px !important;
-		}
-		
-		/* 确保整个navbar-action区域垂直居中 */
-		.navbar-action {
-			display: flex !important;
-			align-items: center !important;
-			height: 50px !important;
-		}
-		
-		/* 确保navbar-header也参与垂直居中 */
-		.navbar-header {
-			display: flex !important;
-			align-items: center !important;
-			height: 50px !important;
-		}
-		
-		/* 确保logo区域垂直居中 */
-		.logo {
-			display: flex !important;
-			align-items: center !important;
-			height: 50px !important;
-		}
-		
-		.logo a {
-			display: flex !important;
-			align-items: center !important;
-			height: 100% !important;
-		}
-		
-		.logo img {
-			max-height: 40px !important;
-			width: auto !important;
+			display: flex;
+			align-items: center;
+			height: 100%;
 		}
 		</style>
 		{{ &OPT.codeBeforHead }}
