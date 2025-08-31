@@ -44,6 +44,19 @@
   		.logo {
       			background: transparent !important;
   		}
+  		
+  		/* 电脑端logo垂直居中 */
+  		.navbar-header .logo {
+  			display: flex !important;
+  			align-items: center !important;
+  			height: 50px !important;
+  		}
+  		
+  		/* 电脑端logo图片样式 */
+  		.navbar-header .logo img {
+  			max-height: 40px !important;
+  			width: auto !important;
+  		}
 
   		/* 确保导航栏区域也透明 */
   		.navbar-collapse {
@@ -83,7 +96,7 @@
 			}
 			
 			.logo img {
-				max-height: 40px !important;
+				max-height: 30px !important;
 				width: auto !important;
 			}
 			
@@ -139,7 +152,7 @@
 						<span class="icon-bar icon-bar-2"></span>
 						<span class="icon-bar icon-bar-3"></span>
 					</button>
-					<div class="logo" style="display: inline-block;">
+					<div class="logo">
 						{{ #OPT.logo }}
 						<a href="/" rel="home"><img src="{{ &OPT.logo }}" alt="{{ &OPT.siteName }}"></a>
 						{{ /OPT.logo }}
