@@ -63,21 +63,6 @@
 	      background: #e9ecef !important; /* 更深一点的浅灰色 */
 	      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	  	}
-		
-		/* 移动端搜索框样式 */
-		@media (max-width: 767px) {
-			.navbar-form.visible-xs {
-				margin: 10px 15px !important;
-			}
-			
-			.navbar-form.visible-xs .input-group {
-				width: 100% !important;
-			}
-			
-			.navbar-form.visible-xs .form-control {
-				width: calc(100% - 40px) !important;
-			}
-		}
         </style>		
 		{{ &OPT.codeBeforHead }}
 	</head>
@@ -90,7 +75,7 @@
 						<span class="icon-bar icon-bar-2"></span>
 						<span class="icon-bar icon-bar-3"></span>
 					</button>
-					<div class="logo" style="display: inline-block;">
+					<div class="logo">
 						{{ #OPT.logo }}
 						<a href="/" rel="home"><img src="{{ &OPT.logo }}" alt="{{ &OPT.siteName }}"></a>
 						{{ /OPT.logo }}
@@ -98,23 +83,6 @@
 						{{ ^OPT.logo }}
 						<a href="/" rel="home"><img src="https://github.com/spritee1/my-images/blob/main/Cache_-4425da076a6845d4.jpg?raw=true" alt="请自定义OPT.logo"></a>
 						{{ /OPT.logo }}
-					</div>
-					<!-- 移动端搜索框 -->
-					<div class="navbar-form navbar-left visible-xs" role="search" style="display: inline-block; width: auto; float: right; margin: 10px 0; position: relative; vertical-align: middle;">
-						<form action="/search" method="GET" class="form-inline" style="display: flex; align-items: center;">
-							<div class="input-group" style="width: 150px; display: flex;">
-								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: 110px; height: 30px; padding: 5px 10px; flex-grow: 1;">
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default" style="padding: 5px 10px; height: 30px; display: flex; align-items: center; justify-content: center;">
-										<i class="wpcom-icon wi">
-											<svg aria-hidden="true">
-												<use xlink:href="#wi-search"></use>
-											</svg>
-										</i>
-									</button>
-								</span>
-							</div>
-						</form>
 					</div>
 				</div>
 				<div class="collapse navbar-collapse">
@@ -125,22 +93,6 @@
 							{{ /widgetMenuList }}
 						</ul>
 					</nav>
-					<div class="navbar-form navbar-left hidden-xs" role="search">
-						<form action="/search" method="GET" class="form-inline">
-							<div class="input-group">
-								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: 150px;">
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default">
-										<i class="wpcom-icon wi">
-											<svg aria-hidden="true">
-												<use xlink:href="#wi-search"></use>
-											</svg>
-										</i>
-									</button>
-								</span>
-							</div>
-						</form>
-					</div>
 					<div class="navbar-action pull-right">
 						<div id="j-user-wrap">
 							<a class="login cur" href="/admin">登录</a>
@@ -427,7 +379,6 @@
             // 每分钟更新一次运行时间
             setInterval(calculateBlogRuntime, 60000);
         });
-        
     </script>
 	</body>
 
