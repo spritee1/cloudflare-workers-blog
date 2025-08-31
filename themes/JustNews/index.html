@@ -57,10 +57,54 @@
   			max-height: 40px !important;
   			width: auto !important;
   		}
-
-  		/* 确保导航栏区域也透明 */
+  		
+  		/* 电脑端导航栏元素垂直居中 */
+  		.navbar-header {
+  			display: flex !important;
+  			align-items: center !important;
+  			min-height: 50px !important;
+  		}
+  		
+  		.navbar-header .navbar-toggle {
+  			display: flex !important;
+  			align-items: center !important;
+  			height: 50px !important;
+  		}
+  		
+  		/* 电脑端导航栏整体垂直居中 */
   		.navbar-collapse {
+  			display: flex !important;
+  			align-items: center !important;
       		background: transparent !important;
+  		}
+  		
+  		.navbar-left {
+  			display: flex !important;
+  			align-items: center !important;
+  		}
+  		
+  		.navbar-form.navbar-left {
+  			display: flex !important;
+  			align-items: center !important;
+  			margin: 0 15px !important;
+  		}
+  		
+  		/* 导航菜单项垂直居中 */
+  		.nav.navbar-nav {
+  			display: flex !important;
+  			align-items: center !important;
+  			height: 50px !important;
+  		}
+  		
+  		.nav.navbar-nav .menu-item {
+  			display: flex !important;
+  			align-items: center !important;
+  		}
+  		
+  		.nav.navbar-nav .menu-item a {
+  			display: flex !important;
+  			align-items: center !important;
+  			height: 50px !important;
   		}
 		/* 文章列表项背景颜色 */
   		.post-loop-default .item {
