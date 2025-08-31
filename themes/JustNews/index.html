@@ -27,29 +27,10 @@
         <style>
         body {
             background: #f5f5dc !important; /* 米白色（经典米白） */
-    		background-attachment: fixed;
-    		min-height: 100vh;
+		background-attachment: fixed;
+		min-height: 100vh;
         }
-		 /* 精确针对您的header结构 */
-  		header.header {
-      			background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
-  		}
 
-  		/* 确保内部容器也应用渐变 */
-  		.header .container {
-      			background: transparent !important;
-  		}
-
-  		/* 确保logo区域透明 */
-  		.logo {
-      			background: transparent !important;
-  		}
-
-  		/* 确保导航栏区域也透明 */
-  		.navbar-collapse {
-      		background: transparent !important;
-  		}
-		
 		/* 添加半透明背景图片 */
 		body {
 			background-image: url('https://img.qselery.icu/img/20250829072941641.jpg') !important;
@@ -105,14 +86,7 @@
 				background: transparent !important;
 			}
 			
-			/* 修复移动端菜单栏显示问题 */
-			.navbar-nav {
-				display: block !important;
-			}
-			
-			.navbar-nav > li {
-				display: block !important;
-			}
+
 			
 			.container.wrap {
 				padding: 10px !important;
@@ -128,79 +102,97 @@
 		}
 		
 		/* 修复移动端菜单栏显示问题 */
-		@media (max-width: 768px) {
-			.navbar-nav {
-				display: block !important;
+			@media (max-width: 768px) {
+				/* 确保折叠的导航栏在移动端正确显示 */
+				.navbar-collapse.collapse {
+					display: none !important;
+				}
+				
+				/* 确保汉堡菜单展开后内容可见 - 优先级更高的选择器 */
+				.navbar-header + .navbar-collapse.collapse.in {
+					display: block !important;
+					background-color: rgba(255, 255, 255, 0.95) !important;
+					width: 100% !important;
+					position: relative !important;
+					z-index: 1000 !important;
+					padding: 15px !important;
+				}
+				
+				/* 备用选择器，确保兼容性 */
+				header.header .container .navbar-collapse.collapse.in {
+					display: block !important;
+				}
+				
+				/* 确保所有层级的菜单元素都可见 */
+				header.header .container .navbar-collapse.collapse.in * {
+					display: block !important;
+					visibility: visible !important;
+					opacity: 1 !important;
+				}
+				
+				/* 修复汉堡菜单展开后元素显示问题 */
+				.navbar-collapse {
+					max-height: 100vh !important;
+					overflow-y: auto !important;
+					width: 100% !important;
+				}
+				
+				/* 确保导航菜单可见 */
+				.navbar-nav {
+					display: block !important;
+					float: none !important;
+					width: 100% !important;
+				}
+				
+				/* 确保导航菜单项可见 */
+				.navbar-nav > li {
+					display: block !important;
+					float: none !important;
+					width: 100% !important;
+					clear: both !important;
+				}
+				
+				/* 确保导航菜单链接文本可见 */
+				.navbar-nav > li > a {
+					display: block !important;
+					color: #333 !important; /* 设置深色文本以确保可见性 */
+					padding: 10px 15px !important;
+					text-decoration: none !important;
+					background-color: transparent !important;
+				}
+				
+				/* 确保搜索框和登录按钮在移动端汉堡菜单中可见 */
+				.navbar-action {
+					display: block !important;
+					float: none !important;
+					width: 100% !important;
+					padding: 10px !important;
+				}
+				
+				.navbar-form.navbar-left {
+					display: block !important;
+					float: none !important;
+					width: 100% !important;
+					margin: 10px 0 !important;
+				}
+				
+				/* 确保登录按钮在移动端可见 */
+				#j-user-wrap {
+					display: block !important;
+					float: none !important;
+					margin: 10px 0 !important;
+					text-align: center !important;
+				}
+				
+				.login.cur {
+					display: block !important;
+					color: #333 !important;
+					text-decoration: none !important;
+					padding: 8px 15px !important;
+					border: 1px solid #ddd !important;
+					border-radius: 4px !important;
+				}
 			}
-			
-			.navbar-nav > li {
-				display: block !important;
-				float: none !important;
-				width: 100% !important;
-			}
-			
-			/* 确保导航菜单链接文本可见 */
-			.navbar-nav > li > a {
-				display: block !important;
-				color: #333 !important; /* 设置深色文本以确保可见性 */
-				padding: 10px 15px !important;
-				text-decoration: none !important;
-			}
-			
-			/* 确保折叠的导航栏在移动端正确显示 */
-			.navbar-collapse.collapse {
-				display: none !important;
-			}
-			
-			.navbar-collapse.collapse.in {
-				display: block !important;
-				background-color: rgba(255, 255, 255, 0.95) !important;
-				width: 100% !important;
-			}
-			
-			/* 修复汉堡菜单展开后元素显示问题 */
-			.navbar-collapse {
-				max-height: 100vh !important;
-				overflow-y: auto !important;
-				width: 100% !important;
-				position: absolute !important;
-				top: 100% !important;
-				left: 0 !important;
-				z-index: 1000 !important;
-			}
-			
-			/* 确保搜索框和登录按钮在移动端汉堡菜单中可见 */
-			.navbar-action {
-				display: block !important;
-				float: none !important;
-				width: 100% !important;
-				padding: 10px !important;
-			}
-			
-			.navbar-form.navbar-left {
-				display: block !important;
-				float: none !important;
-				width: 100% !important;
-				margin: 10px 0 !important;
-			}
-			
-			/* 确保登录按钮在移动端可见 */
-			#j-user-wrap {
-				display: block !important;
-				float: none !important;
-				margin: 10px 0 !important;
-				text-align: center !important;
-			}
-			
-			.login.cur {
-				display: block !important;
-				color: #333 !important;
-				text-decoration: none !important;
-				padding: 8px 15px !important;
-				border: 1px solid #ddd !important;
-				border-radius: 4px !important;
-			}
-		}
 		/* 文章列表项背景颜色 */
   		.post-loop-default .item {
 	      background: rgba(255, 255, 255, 0.4) !important; /* 半透明背景 */
