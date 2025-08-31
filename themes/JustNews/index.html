@@ -287,6 +287,44 @@
 					opacity: 1 !important;
 					visibility: visible !important;
 				}
+				
+				/* 添加极高优先级的CSS规则防止被覆盖 */
+				body .navbar-collapse.collapse.in {
+					display: block !important;
+					background-color: #ffffff !important;
+					opacity: 1 !important;
+					visibility: visible !important;
+					z-index: 9999 !important;
+					position: relative !important;
+					height: auto !important;
+					overflow: visible !important;
+				}
+				
+				/* 使用更具体的选择器 */
+				header.header .container .navbar-collapse.collapse.in {
+					display: block !important;
+					background-color: #ffffff !important;
+					border: 2px solid #007cba !important; /* 添加蓝色边框便于调试 */
+				}
+				
+				/* 确保菜单项使用极高优先级 */
+				header.header .container .navbar-collapse.collapse.in .navbar-nav > li > a {
+					display: block !important;
+					color: #333333 !important;
+					background-color: #ffffff !important;
+					padding: 15px !important;
+					border-bottom: 1px solid #eee !important;
+					text-decoration: none !important;
+					font-size: 16px !important;
+					line-height: 1.4 !important;
+				}
+				
+				/* 阻止任何可能的隐藏 */
+				.navbar-collapse.collapse.in,
+				.navbar-collapse.collapse.in * {
+					transition: none !important;
+					animation: none !important;
+				}
 			}
 		/* 文章列表项背景颜色 */
   		.post-loop-default .item {
@@ -663,37 +701,99 @@
             setInterval(calculateBlogRuntime, 60000);
         });
         
-        // 移动端菜单切换功能的备用实现
+        // 移动端菜单切换功能的增强实现
         $(document).ready(function() {
-            // 确保汉堡按钮点击事件正常工作
-            $('.navbar-toggle').off('click.mobile-menu').on('click.mobile-menu', function(e) {
+            console.log('Mobile menu script loaded');
+            
+            // 完全覆盖Bootstrap的处理，使用简单的显示/隐藏
+            $('.navbar-toggle').off().on('click', function(e) {
                 e.preventDefault();
-                var $collapse = $('.navbar-collapse');
+                e.stopPropagation();
                 
-                // 切换显示状态
-                if ($collapse.hasClass('in')) {
+                console.log('Hamburger button clicked');
+                var $collapse = $('.navbar-collapse');
+                var isVisible = $collapse.is(':visible') && $collapse.hasClass('in');
+                
+                console.log('Menu currently visible:', isVisible);
+                
+                if (isVisible) {
+                    // 关闭菜单
+                    console.log('Closing menu');
                     $collapse.removeClass('in').hide();
                 } else {
-                    $collapse.addClass('in').show();
+                    // 打开菜单
+                    console.log('Opening menu');
+                    $collapse.addClass('in');
+                    
+                    // 直接设置内联样式，确保可见
+                    $collapse.attr('style', 
+                        'display: block !important; ' +
+                        'visibility: visible !important; ' +
+                        'opacity: 1 !important; ' +
+                        'background-color: #ffffff !important; ' +
+                        'position: relative !important; ' +
+                        'z-index: 9999 !important; ' +
+                        'width: 100% !important; ' +
+                        'padding: 15px !important; ' +
+                        'border: 2px solid #007cba !important; ' +
+                        'margin-top: 10px !important;'
+                    );
+                    
+                    // 设置菜单项样式
+                    setTimeout(function() {
+                        $collapse.find('.navbar-nav li a').each(function() {
+                            $(this).attr('style', 
+                                'display: block !important; ' +
+                                'color: #333333 !important; ' +
+                                'background-color: #ffffff !important; ' +
+                                'padding: 12px 15px !important; ' +
+                                'border-bottom: 1px solid #eee !important; ' +
+                                'text-decoration: none !important; ' +
+                                'font-size: 16px !important;'
+                            );
+                        });
+                        
+                        // 设置搜索表单样式
+                        $collapse.find('.navbar-form').attr('style', 
+                            'display: block !important; ' +
+                            'padding: 10px 0 !important; ' +
+                            'border-top: 1px solid #eee !important;'
+                        );
+                        
+                        // 设置登录按钮样式
+                        $collapse.find('.login').attr('style', 
+                            'display: inline-block !important; ' +
+                            'color: #333333 !important; ' +
+                            'background-color: #f0f0f0 !important; ' +
+                            'padding: 8px 15px !important; ' +
+                            'border: 1px solid #ddd !important; ' +
+                            'text-decoration: none !important;'
+                        );
+                        
+                        console.log('All menu styles applied via inline CSS');
+                    }, 50);
                 }
             });
             
             // 点击菜单外部区域时关闭菜单
             $(document).on('click', function(e) {
                 if (!$(e.target).closest('.navbar-header, .navbar-collapse').length) {
-                    $('.navbar-collapse').removeClass('in').hide();
+                    $('.navbar-collapse').removeClass('in');
+                    $('.navbar-toggle').removeClass('active');
                 }
             });
             
             // 窗口大小改变时的处理
             $(window).resize(function() {
                 if ($(window).width() > 768) {
-                    $('.navbar-collapse').removeClass('in').show();
-                } else {
-                    if (!$('.navbar-collapse').hasClass('in')) {
-                        $('.navbar-collapse').hide();
-                    }
+                    $('.navbar-collapse').removeClass('in').css('display', '');
+                    $('.navbar-toggle').removeClass('active');
                 }
+            });
+            
+            // 调试信息
+            $('.navbar-collapse').on('transitionend', function() {
+                console.log('Menu transition ended');
             });
         });
     </script>
