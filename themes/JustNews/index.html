@@ -129,21 +129,105 @@
 		
 		/* 修复移动端菜单栏显示问题 */
 		@media (max-width: 768px) {
+			/* 确保汉堡菜单在移动端正确显示 */
+			.navbar-toggle {
+				display: block !important;
+				z-index: 1001 !important;
+			}
+			
+			/* 确保折叠的导航栏在移动端正确显示 */
+			.navbar-collapse {
+				position: fixed !important;
+				top: 0 !important;
+				left: 0 !important;
+				width: 100% !important;
+				height: 100% !important;
+				background: rgba(0, 0, 0, 0.9) !important;
+				z-index: 1000 !important;
+				overflow-y: auto !important;
+				-webkit-overflow-scrolling: touch !important;
+				display: none !important;
+			}
+			
+			.navbar-collapse.in {
+				display: block !important;
+			}
+			
+			/* 确保导航菜单项在移动端正确显示 */
 			.navbar-nav {
 				display: block !important;
+				margin: 60px 0 0 !important;
+				padding: 20px !important;
 			}
 			
 			.navbar-nav > li {
 				display: block !important;
+				margin: 10px 0 !important;
 			}
 			
-			/* 确保折叠的导航栏在移动端正确显示 */
-			.navbar-collapse.collapse {
-				display: none !important;
-			}
-			
-			.navbar-collapse.collapse.in {
+			.navbar-nav > li > a {
 				display: block !important;
+				color: #fff !important;
+				font-size: 18px !important;
+				padding: 15px 20px !important;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+			}
+			
+			/* 确保搜索框和登录按钮在移动端汉堡菜单中可见 */
+			.navbar-action {
+				display: block !important;
+				padding: 20px !important;
+				border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+				margin-top: 20px !important;
+			}
+			
+			.navbar-form.navbar-left {
+				display: block !important;
+				margin: 0 0 20px !important;
+				padding: 0 !important;
+			}
+			
+			.navbar-form .form-group {
+				width: 100% !important;
+			}
+			
+			.navbar-form .form-control {
+				width: 100% !important;
+				background: rgba(255, 255, 255, 0.1) !important;
+				color: #fff !important;
+				border: 1px solid rgba(255, 255, 255, 0.2) !important;
+			}
+			
+			.navbar-form .form-control::-webkit-input-placeholder {
+				color: rgba(255, 255, 255, 0.7) !important;
+			}
+			
+			.navbar-form .form-control::-moz-placeholder {
+				color: rgba(255, 255, 255, 0.7) !important;
+			}
+			
+			.navbar-form .form-control:-ms-input-placeholder {
+				color: rgba(255, 255, 255, 0.7) !important;
+			}
+			
+			.btn-default {
+				background: rgba(255, 255, 255, 0.1) !important;
+				color: #fff !important;
+				border: 1px solid rgba(255, 255, 255, 0.2) !important;
+			}
+			
+			#j-user-wrap {
+				display: block !important;
+				text-align: center !important;
+			}
+			
+			.login.cur {
+				display: inline-block !important;
+				color: #fff !important;
+				padding: 10px 20px !important;
+				border: 1px solid rgba(255, 255, 255, 0.2) !important;
+				border-radius: 4px !important;
+				margin: 0 !important;
 			}
 		}
 		/* 文章列表项背景颜色 */
