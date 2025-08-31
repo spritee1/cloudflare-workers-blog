@@ -44,67 +44,10 @@
   		.logo {
       			background: transparent !important;
   		}
-  		
-  		/* 电脑端logo垂直居中 */
-  		.navbar-header .logo {
-  			display: flex !important;
-  			align-items: center !important;
-  			height: 50px !important;
-  		}
-  		
-  		/* 电脑端logo图片样式 */
-  		.navbar-header .logo img {
-  			max-height: 40px !important;
-  			width: auto !important;
-  		}
-  		
-  		/* 电脑端导航栏元素垂直居中 */
-  		.navbar-header {
-  			display: flex !important;
-  			align-items: center !important;
-  			min-height: 50px !important;
-  		}
-  		
-  		.navbar-header .navbar-toggle {
-  			display: flex !important;
-  			align-items: center !important;
-  			height: 50px !important;
-  		}
-  		
-  		/* 电脑端导航栏整体垂直居中 */
+
+  		/* 确保导航栏区域也透明 */
   		.navbar-collapse {
-  			display: flex !important;
-  			align-items: center !important;
       		background: transparent !important;
-  		}
-  		
-  		.navbar-left {
-  			display: flex !important;
-  			align-items: center !important;
-  		}
-  		
-  		.navbar-form.navbar-left {
-  			display: flex !important;
-  			align-items: center !important;
-  			margin: 0 15px !important;
-  		}
-  		
-  		/* 导航菜单项垂直居中 */
-  		.nav.navbar-nav {
-  			display: flex !important;
-  			align-items: center !important;
-  			height: 50px !important;
-  		}
-  		
-  		.nav.navbar-nav .menu-item {
-  			display: flex !important;
-  			align-items: center !important;
-  		}
-  		
-  		.nav.navbar-nav .menu-item a {
-  			display: flex !important;
-  			align-items: center !important;
-  			height: 50px !important;
   		}
 		/* 文章列表项背景颜色 */
   		.post-loop-default .item {
@@ -120,70 +63,6 @@
 	      background: #e9ecef !important; /* 更深一点的浅灰色 */
 	      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	  	}
-		
-		/* 移动端搜索框样式 */
-		@media (max-width: 767px) {
-			.navbar-header {
-				display: flex !important;
-				align-items: center !important;
-				justify-content: space-between !important;
-				width: 100% !important;
-				padding: 5px 15px !important;
-				min-height: 30px !important;
-			}
-			
-			.logo {
-				flex-shrink: 0 !important;
-				order: 1 !important;
-				display: flex !important;
-				align-items: center !important;
-			}
-			
-			.logo img {
-				max-height: 25px !important;
-				width: auto !important;
-			}
-			
-			.navbar-toggle {
-				order: 3 !important;
-				margin: 0 !important;
-				border: none !important;
-				background: transparent !important;
-				padding: 8px !important;
-				display: flex !important;
-				align-items: center !important;
-				height: 40px !important;
-			}
-			
-			.navbar-form.visible-xs {
-				order: 2 !important;
-				margin: 0 10px !important;
-				position: static !important;
-				float: none !important;
-				display: flex !important;
-				align-items: center !important;
-			}
-			
-			.navbar-form.visible-xs .input-group {
-				width: 100px !important;
-				display: flex !important;
-				align-items: center !important;
-			}
-			
-			.navbar-form.visible-xs .form-control {
-				width: 70px !important;
-				height: 25px !important;
-				padding: 2px 4px !important;
-				font-size: 12px !important;
-				border-radius: 3px !important;
-			}
-			
-			.navbar-form.visible-xs .btn {
-				height: 25px !important;
-				padding: 2px 4px !important;
-				border-radius: 3px !important;
-			}
-		}
         </style>		
 		{{ &OPT.codeBeforHead }}
 	</head>
@@ -205,23 +84,6 @@
 						<a href="/" rel="home"><img src="https://github.com/spritee1/my-images/blob/main/Cache_-4425da076a6845d4.jpg?raw=true" alt="请自定义OPT.logo"></a>
 						{{ /OPT.logo }}
 					</div>
-					<!-- 移动端搜索框 -->
-					<div class="navbar-form navbar-left visible-xs" role="search" style="display: inline-block; width: auto; float: right; margin: 10px 0; position: relative; vertical-align: middle;">
-						<form action="/search" method="GET" class="form-inline" style="display: flex; align-items: center;">
-							<div class="input-group" style="width: 150px; display: flex;">
-								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: 110px; height: 30px; padding: 5px 10px; flex-grow: 1;">
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default" style="padding: 5px 10px; height: 30px; display: flex; align-items: center; justify-content: center;">
-										<i class="wpcom-icon wi">
-											<svg aria-hidden="true">
-												<use xlink:href="#wi-search"></use>
-											</svg>
-										</i>
-									</button>
-								</span>
-							</div>
-						</form>
-					</div>
 				</div>
 				<div class="collapse navbar-collapse">
 					<nav class="navbar-left primary-menu">
@@ -231,22 +93,6 @@
 							{{ /widgetMenuList }}
 						</ul>
 					</nav>
-					<div class="navbar-form navbar-left hidden-xs" role="search">
-						<form action="/search" method="GET" class="form-inline">
-							<div class="input-group">
-								<input type="text" name="q" class="form-control" placeholder="搜索..." style="width: 150px;">
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default">
-										<i class="wpcom-icon wi">
-											<svg aria-hidden="true">
-												<use xlink:href="#wi-search"></use>
-											</svg>
-										</i>
-									</button>
-								</span>
-							</div>
-						</form>
-					</div>
 					<div class="navbar-action pull-right">
 						<div id="j-user-wrap">
 							<a class="login cur" href="/admin">登录</a>
@@ -533,7 +379,6 @@
             // 每分钟更新一次运行时间
             setInterval(calculateBlogRuntime, 60000);
         });
-        
     </script>
 	</body>
 
