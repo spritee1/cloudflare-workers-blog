@@ -25,46 +25,6 @@
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/wpcom-cn/assets/fonts/icons-2.6.4.js?ver=6.1.2' id='wpcom-icons-js'></script>
 		<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.3.2/styles/tomorrow-night-bright.min.css">
 		<script src='https://cdn.staticfile.org/highlight.js/10.3.2/highlight.min.js'></script>
-		<style>
-		/* 搜索框样式 */
-		.search-form {
-			position: relative;
-			display: inline-block;
-			margin-right: 15px;
-		}
-
-		.search-field {
-			padding: 8px 15px;
-			border: 1px solid #ccc;
-			border-radius: 20px;
-			width: 220px;
-			transition: width 0.3s ease-in-out;
-		}
-
-		.search-field:focus {
-			width: 280px;
-			outline: none;
-			border-color: #007bff;
-		}
-
-		.search-submit {
-			position: absolute;
-			right: 5px;
-			top: 50%;
-			transform: translateY(-50%);
-			padding: 6px 12px;
-			border: none;
-			background-color: #007bff;
-			color: #fff;
-			border-radius: 15px;
-			cursor: pointer;
-			transition: background-color 0.3s;
-		}
-
-		.search-submit:hover {
-			background-color: #0056b3;
-		}
-		</style>
 		{{ &OPT.codeBeforHead }}
 	</head>
 	<body class="archive paged category category-zhishi category-5 paged-2 category-paged-2 lang-cn el-boxed">
@@ -95,13 +55,6 @@
 						</ul>
 					</nav>
 					<div class="navbar-action pull-right">
-						<form role="search" method="get" id="searchform" class="search-form" action="/">
-							<label>
-								<span class="screen-reader-text">搜索：</span>
-								<input type="search" class="search-field" placeholder="搜索…" value="" name="s">
-							</label>
-							<input type="submit" class="search-submit" value="搜索">
-						</form>
 						<div id="j-user-wrap">
 							<a class="login cur" href="/admin">登录</a>
 						</div>
