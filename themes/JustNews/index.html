@@ -49,6 +49,13 @@
   		.navbar-collapse {
       		background: transparent !important;
   		}
+  		/* 搜索框容器透明 */
+  		.navbar-action {
+      		background: transparent !important;
+  		}
+  		.search-form {
+      		background: transparent !important;
+  		}
 		/* 文章列表项背景颜色 */
   		.post-loop-default .item {
 	      background: #f8f9fa !important; /* 柔和的浅灰色 */
@@ -65,26 +72,27 @@
 	  	}
         </style>
         <style>
-        /* 与导航栏融合的搜索框样式 */
+        /* 完全透明的搜索框样式 */
         @media (min-width: 768px) {
             .search-form {
                 display: inline-flex;
                 align-items: center;
                 position: relative;
                 margin: 0 15px 0 0;
+                background-color: transparent;
             }
             
-            /* 与导航栏背景融合的搜索框 */
+            /* 完全透明的搜索框 */
             .search-form .form-control {
-                background-color: rgba(255, 255, 255, 0.7);
-                border: 1px solid rgba(255, 255, 255, 0.3);
+                background-color: rgba(255, 255, 255, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.2);
                 color: #000000;
                 height: 36px;
                 padding: 6px 12px 6px 15px;
                 font-size: 14px;
                 border-radius: 18px; /* 圆角效果 */
                 min-width: 180px;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                box-shadow: none;
                 transition: all 0.3s ease;
             }
             
@@ -102,9 +110,9 @@
             
             .search-form .form-control:focus {
                 outline: none;
-                background-color: rgba(255, 255, 255, 0.9);
-                border: 1px solid rgba(255, 255, 255, 0.8);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+                background-color: rgba(255, 255, 255, 0.7);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             }
             
             .search-form .btn {
@@ -123,7 +131,7 @@
             
             .search-form .btn:hover {
                 color: #000000;
-                background-color: rgba(255, 255, 255, 0.2);
+                background-color: rgba(255, 255, 255, 0.1);
             }
         }
         </style>		
