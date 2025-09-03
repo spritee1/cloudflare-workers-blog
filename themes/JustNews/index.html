@@ -65,19 +65,12 @@
 	  	}
         </style>
         <style>
-        /* 搜索框在导航栏粉红色区域中垂直居中 */
+        /* 透明搜索框样式 */
         @media (min-width: 768px) {
-            .navbar-action {
-                display: flex !important;
-                align-items: center;
-                height: 70px;
-                float: right !important;
-                margin-right: 15px;
-            }
-            
             .search-form {
-                display: flex;
+                display: inline-flex;
                 align-items: center;
+                position: relative;
                 margin: 0 15px 0 0;
             }
             
@@ -87,9 +80,10 @@
                 border: 1px solid rgba(255,255,255,0.5);
                 color: #000000;
                 height: 34px;
-                padding: 6px 12px;
+                padding: 6px 12px 6px 15px;
                 font-size: 14px;
                 border-radius: 17px; /* 圆角效果 */
+                min-width: 150px;
             }
             
             .search-form .form-control::-webkit-input-placeholder {
@@ -119,6 +113,7 @@
                 margin-left: -30px; /* 让按钮覆盖在输入框上 */
                 z-index: 10;
                 position: relative;
+                cursor: pointer;
             }
         }
         </style>		
