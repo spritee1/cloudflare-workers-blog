@@ -81,15 +81,15 @@
                 margin: 0 15px 0 0;
             }
             
-            /* 移除搜索框的白色背景和边框 */
+            /* 完全透明的搜索框 */
             .search-form .form-control {
                 background-color: transparent;
-                border: none;
-                border-bottom: 1px solid rgba(255,255,255,0.7);
+                border: 1px solid rgba(255,255,255,0.5);
                 color: #000000;
                 height: 34px;
                 padding: 6px 12px;
                 font-size: 14px;
+                border-radius: 17px; /* 圆角效果 */
             }
             
             .search-form .form-control::-webkit-input-placeholder {
@@ -106,7 +106,7 @@
             
             .search-form .form-control:focus {
                 outline: none;
-                border-bottom: 1px solid rgba(255,255,255,1);
+                border: 1px solid rgba(255,255,255,1);
                 box-shadow: none;
             }
             
@@ -116,6 +116,9 @@
                 color: #000000;
                 height: 34px;
                 padding: 6px 12px;
+                margin-left: -30px; /* 让按钮覆盖在输入框上 */
+                z-index: 10;
+                position: relative;
             }
         }
         </style>		
