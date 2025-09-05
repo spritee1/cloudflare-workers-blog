@@ -498,7 +498,7 @@
             您的浏览器不支持音频元素。
         </audio>
         <button id="music-toggle" style="background: #4CAF50; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center;">
-            <span id="music-icon">⏸</span>
+            <span id="music-icon">▶</span>
         </button>
     </div>
 
@@ -507,23 +507,48 @@
             const audio = document.getElementById('bg-music');
             const toggleButton = document.getElementById('music-toggle');
             const musicIcon = document.getElementById('music-icon');
+            let isPlaying = false;
             
-            // 尝试自动播放音乐
+            // 设置音量
             audio.volume = 0.3; // 设置音量为30%
             
-            // 页面加载后自动播放
-            window.addEventListener('load', function() {
-                // 在移动设备上可能需要用户交互才能播放
-                audio.play().catch(function(error) {
-                    console.log("Auto-play prevented: ", error);
-                });
-            });
+            // 在用户第一次交互时尝试播放音乐
+            function attemptAutoplay() {
+                // 移除事件监听器，确保只执行一次
+                document.removeEventListener('click', attemptAutoplay);
+                document.removeEventListener('touchstart', attemptAutoplay);
+                document.removeEventListener('keydown', attemptAutoplay);
+                
+                // 尝试播放音乐
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        // 自动播放成功
+                        isPlaying = true;
+                        musicIcon.textContent = '⏸';
+                    }).catch(function(error) {
+                        console.log("Auto-play prevented: ", error);
+                        // 如果自动播放失败，保持暂停状态
+                        isPlaying = false;
+                        musicIcon.textContent = '▶';
+                    });
+                }
+            }
+            
+            // 监听用户的第一次交互
+            document.addEventListener('click', attemptAutoplay);
+            document.addEventListener('touchstart', attemptAutoplay);
+            document.addEventListener('keydown', attemptAutoplay);
             
             // 切换播放/暂停
-            toggleButton.addEventListener('click', function() {
+            toggleButton.addEventListener('click', function(e) {
+                e.stopPropagation(); // 防止触发document的事件
                 if (audio.paused) {
-                    audio.play();
-                    musicIcon.textContent = '⏸';
+                    audio.play().then(function() {
+                        musicIcon.textContent = '⏸';
+                    }).catch(function(error) {
+                        console.log("Play failed: ", error);
+                    });
                 } else {
                     audio.pause();
                     musicIcon.textContent = '▶';
