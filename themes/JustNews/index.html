@@ -100,6 +100,7 @@
         /* 核心文章项容器透明样式 */
         li.item {
             background: transparent !important;
+            border-bottom: 1px solid transparent !important;
         }
         
         .item-img {
@@ -108,6 +109,18 @@
         
         .item-content {
             background: transparent !important;
+        }
+        
+        /* 覆盖默认的.post-loop-default .item样式 */
+        .post-loop-default .item {
+            background: transparent !important;
+            border-bottom: 1px solid transparent !important;
+        }
+        
+        .post-loop-default .item:hover {
+            background: rgba(255, 255, 255, 0.1) !important;
+            margin: 0 !important;
+            padding: 20px 0 !important;
         }
         
         /* 完全透明的搜索框样式 */
