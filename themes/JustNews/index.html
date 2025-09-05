@@ -27,7 +27,7 @@
         <style>
         /* 基础背景设置 */
         body {
-            background: #f5f5dc url('https://img.qselery.icu/img/20250905171946908.jpg') no-repeat center center fixed !important;
+            background: #f5f5dc url('https://img.qselery.icu/img/20250905170948117.jpg') no-repeat center center fixed !important;
             background-size: cover !important;
     		background-attachment: fixed;
     		min-height: 100vh;
@@ -488,6 +488,47 @@
             calculateBlogRuntime();
             // 每分钟更新一次运行时间
             setInterval(calculateBlogRuntime, 60000);
+        });
+    </script>
+    
+    <!-- 背景音乐播放器 -->
+    <div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: rgba(0,0,0,0.7); border-radius: 30px; padding: 10px; display: flex; align-items: center;">
+        <audio id="bg-music" loop>
+            <source src="https://img.qselery.icu/img/wgcszdt.mp4" type="audio/mp4">
+            您的浏览器不支持音频元素。
+        </audio>
+        <button id="music-toggle" style="background: #4CAF50; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center;">
+            <span id="music-icon">⏸</span>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('bg-music');
+            const toggleButton = document.getElementById('music-toggle');
+            const musicIcon = document.getElementById('music-icon');
+            
+            // 尝试自动播放音乐
+            audio.volume = 0.3; // 设置音量为30%
+            
+            // 页面加载后自动播放
+            window.addEventListener('load', function() {
+                // 在移动设备上可能需要用户交互才能播放
+                audio.play().catch(function(error) {
+                    console.log("Auto-play prevented: ", error);
+                });
+            });
+            
+            // 切换播放/暂停
+            toggleButton.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    musicIcon.textContent = '⏸';
+                } else {
+                    audio.pause();
+                    musicIcon.textContent = '▶';
+                }
+            });
         });
     </script>
 	</body>
