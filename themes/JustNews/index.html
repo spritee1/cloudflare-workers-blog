@@ -57,7 +57,7 @@
       		background: transparent !important;
   		}
   		
-  		/* 所有容器透明样式 - 使用更高优先级 */
+  		/* 所有容器透明样式 - 使用最高优先级 */
   		#wrap,
   		.container.wrap,
   		.main,
@@ -66,8 +66,10 @@
   		.post-loop,
   		li.item,
   		.item-img,
-  		.item-content {
+  		.item-content,
+  		.post-loop-default .item {
             background: transparent !important;
+            border: none !important;
         }
         
         /* 特别针对文章项的样式 */
@@ -83,6 +85,17 @@
         .post-loop-default .item:hover {
             background: rgba(255, 255, 255, 0.1) !important;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* 针对特定ID的文章项 */
+        [id^="post-"] {
+            background: transparent !important;
+        }
+        
+        /* 覆盖所有可能的背景样式 */
+        .item, .item-img, .item-content, li.item {
+            background-color: transparent !important;
+            background-image: none !important;
         }
         
         /* 完全透明的搜索框样式 */
