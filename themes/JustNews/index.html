@@ -25,102 +25,64 @@
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/wpcom-cn/assets/fonts/icons-2.6.4.js?ver=6.1.2' id='wpcom-icons-js'></script>
  		<!-- 添加背景样式 -->
         <style>
+        /* 基础背景设置 */
         body {
             background: #f5f5dc !important; /* 米白色（经典米白） */
     		background-attachment: fixed;
     		min-height: 100vh;
         }
-		 /* 精确针对您的header结构 */
+        
+        /* 头部样式 */
   		header.header {
       			background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
   		}
 
-  		/* 确保内部容器也应用渐变 */
   		.header .container {
       			background: transparent !important;
   		}
 
-  		/* 确保logo区域透明 */
   		.logo {
       			background: transparent !important;
   		}
 
-  		/* 确保导航栏区域也透明 */
   		.navbar-collapse {
       		background: transparent !important;
   		}
-  		/* 搜索框容器透明 */
+  		
   		.navbar-action {
       		background: transparent !important;
   		}
+  		
   		.search-form {
       		background: transparent !important;
   		}
-		/* 文章列表项背景颜色 */
-  		.post-loop-default .item {
-	      background: #f8f9fa !important; /* 柔和的浅灰色 */
-	      border-radius: 8px;
-	      margin-bottom: 15px;
-	      padding: 15px;
-	      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  		}
-
-  		/* 鼠标悬停效果 */
-  		.post-loop-default .item:hover {
-	      background: #e9ecef !important; /* 更深一点的浅灰色 */
-	      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-	  	}
-        </style>
-        <style>
-        /* 文章容器透明样式 */
-        #wrap {
+  		
+  		/* 所有容器透明样式 - 使用更高优先级 */
+  		#wrap,
+  		.container.wrap,
+  		.main,
+  		.sec-panel,
+  		.sec-panel-body,
+  		.post-loop,
+  		li.item,
+  		.item-img,
+  		.item-content {
             background: transparent !important;
         }
         
-        .container.wrap {
-            background: transparent !important;
-        }
-        
-        .main {
-            background: transparent !important;
-        }
-        
-        .sec-panel {
-            background: transparent !important;
-        }
-        
-        .sec-panel-body {
-            background: transparent !important;
-        }
-        
-        .post-loop {
-            background: transparent !important;
-        }
-        
-        /* 核心文章项容器透明样式 */
-        li.item {
-            background: transparent !important;
-            border-bottom: 1px solid transparent !important;
-        }
-        
-        .item-img {
-            background: transparent !important;
-        }
-        
-        .item-content {
-            background: transparent !important;
-        }
-        
-        /* 覆盖默认的.post-loop-default .item样式 */
+        /* 特别针对文章项的样式 */
         .post-loop-default .item {
             background: transparent !important;
             border-bottom: 1px solid transparent !important;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        
+
         .post-loop-default .item:hover {
             background: rgba(255, 255, 255, 0.1) !important;
-            margin: 0 !important;
-            padding: 20px 0 !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         /* 完全透明的搜索框样式 */
