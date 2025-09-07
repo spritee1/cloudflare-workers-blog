@@ -23,9 +23,9 @@
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/WordPress/WordPress@5.6/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/wpcom-cn/assets/fonts/icons-2.6.4.js?ver=6.1.2' id='wpcom-icons-js'></script>
- 		<!-- 添加背景样式 -->
+
         <style>
-        /* 基础背景设置 */
+    
         body {
             background: #f5f5dc url('https://img.qselery.icu/img/20250906225605231.jpg') no-repeat center center fixed !important;
             background-size: cover !important;
@@ -33,7 +33,7 @@
     		min-height: 100vh;
         }
         
-        /* 头部样式 */
+        
   		header.header {
       			background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%) !important;
   		}
@@ -58,7 +58,7 @@
       		background: transparent !important;
   		}
   		
-  		/* 所有容器透明样式 - 使用最高优先级 */
+  		
   		#wrap,
   		.container.wrap,
   		.main,
@@ -73,7 +73,7 @@
             border: none !important;
         }
         
-        /* 特别针对文章项的样式 */
+        
         .post-loop-default .item {
             background: transparent !important;
             border-bottom: 1px solid transparent !important;
@@ -88,18 +88,18 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
-        /* 针对特定ID的文章项 */
+        
         [id^="post-"] {
             background: transparent !important;
         }
         
-        /* 覆盖所有可能的背景样式 */
+        
         .item, .item-img, .item-content, li.item {
             background-color: transparent !important;
             background-image: none !important;
         }
         
-        /* 完全透明的搜索框样式 */
+        
         @media (min-width: 768px) {
             .search-form {
                 display: inline-flex;
@@ -109,7 +109,7 @@
                 background-color: transparent;
             }
             
-            /* 完全透明的搜索框 */
+            
             .search-form .form-control {
                 background-color: rgba(255, 255, 255, 0.5);
                 border: 1px solid rgba(255, 255, 255, 0.2);
@@ -117,7 +117,7 @@
                 height: 36px;
                 padding: 6px 12px 6px 15px;
                 font-size: 14px;
-                border-radius: 18px; /* 圆角效果 */
+                border-radius: 18px; 
                 min-width: 180px;
                 box-shadow: none;
                 transition: all 0.3s ease;
@@ -148,7 +148,7 @@
                 color: rgba(0, 0, 0, 0.7);
                 height: 36px;
                 padding: 6px 12px;
-                margin-left: -35px; /* 让按钮覆盖在输入框上 */
+                margin-left: -35px; 
                 z-index: 10;
                 position: relative;
                 cursor: pointer;
@@ -467,12 +467,12 @@
 				});
 			})(jQuery);</script>
 		{{ &OPT.codeBeforBody }}
-		<!-- 添加博客运行时间显示 -->
+		
         <script>
-        // 计算博客运行时间
+        
         function calculateBlogRuntime() {
-            // 设置博客创建日期（请根据实际情况修改）
-            var blogStartDate = new Date('2025-08-26'); // 格式: 'YYYY-MM-DD'
+            
+            var blogStartDate = new Date('2025-08-26'); 
             var now = new Date();
             var diffTime = Math.abs(now - blogStartDate);
             var diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
@@ -483,15 +483,15 @@
             document.getElementById('runtime-days').textContent = runtimeText;
         }
 
-        // 页面加载完成后计算运行时间
+        
         document.addEventListener('DOMContentLoaded', function() {
             calculateBlogRuntime();
-            // 每分钟更新一次运行时间
+            
             setInterval(calculateBlogRuntime, 60000);
         });
     </script>
     
-    <!-- 背景音乐播放器 -->
+
     <div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: rgba(0,0,0,0.7); border-radius: 30px; padding: 10px; display: flex; align-items: center;">
         <audio id="bg-music" loop>
             <source src="https://music.qselery.icu/music/chenguang2.mp4" type="audio/mp4">
@@ -509,38 +509,38 @@
             const musicIcon = document.getElementById('music-icon');
             let isPlaying = false;
             
-            // 设置音量
-            audio.volume = 0.3; // 设置音量为30%
             
-            // 在用户第一次交互时尝试播放音乐
+            audio.volume = 0.3; 
+            
+            
             function attemptAutoplay() {
-                // 移除事件监听器，确保只执行一次
+                
                 document.removeEventListener('click', attemptAutoplay);
                 document.removeEventListener('touchstart', attemptAutoplay);
                 document.removeEventListener('keydown', attemptAutoplay);
                 
-                // 尝试播放音乐
+                
                 const playPromise = audio.play();
                 if (playPromise !== undefined) {
                     playPromise.then(function() {
-                        // 自动播放成功
+                        
                         isPlaying = true;
                         musicIcon.textContent = '⏸';
                     }).catch(function(error) {
                         console.log("Auto-play prevented: ", error);
-                        // 如果自动播放失败，保持暂停状态
+                        
                         isPlaying = false;
                         musicIcon.textContent = '▶';
                     });
                 }
             }
             
-            // 监听用户的第一次交互
+            
             document.addEventListener('click', attemptAutoplay);
             document.addEventListener('touchstart', attemptAutoplay);
             document.addEventListener('keydown', attemptAutoplay);
             
-            // 切换播放/暂停
+            
             toggleButton.addEventListener('click', function(e) {
                 e.stopPropagation(); // 防止触发document的事件
                 if (audio.paused) {
